@@ -10,7 +10,6 @@
 		[
 			"es2017"
 		],
-        "removeComments": true,
         "downlevelIteration": true,
         "alwaysStrict": true,
         "declaration": true
