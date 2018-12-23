@@ -3,10 +3,13 @@
 	"description": "Global TypeScript helpers.",
 	"version": "0.2.0",
 	"license": "UNLICENSED",
-	"repository":
-	{
+	"repository": {
 		"type": "git",
 		"url": "https://bitbucket.org/Bluecewe/types-helpers"
 	},
-	"private": true
+	"private": true,
+	"devDependencies": {
+		"typescript": "3.2.2"
+	},
+	"types": "./build/index.d.ts"
 }
