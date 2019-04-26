@@ -1,7 +1,7 @@
 {
 	"name": "@bluecewe/types-helpers",
 	"description": "Global TypeScript helpers.",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"license": "UNLICENSED",
 	"repository": {
 		"type": "git",
