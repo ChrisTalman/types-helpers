@@ -11,5 +11,8 @@
 	"devDependencies": {
 		"typescript": "3.2.2"
 	},
-	"types": "./build/index.d.ts"
+	"types": "./build/index.d.ts",
+	"scripts": {
+		"build": "./node_modules/.bin/tsc"
+	}
 }
