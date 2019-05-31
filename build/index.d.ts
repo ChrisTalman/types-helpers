@@ -6,3 +6,11 @@ export declare type PromiseResolution<T> = T extends Promise<infer V> ? V : neve
 export declare type PartialDeep<T> = {
     [P in keyof T]?: T[P] extends (infer U)[] ? PartialDeep<U>[] : T[P] extends object ? PartialDeep<T[P]> : T[P];
 };
+/** Converts every property value to the same type as their key. */
+export declare type Mirror<GenericObject> = {
+    [GenericKey in keyof GenericObject]: GenericKey;
+};
+/** Converts every property value to the same type. */
+export declare type Uniform<GenericObject, GenericValue> = {
+    [GenericKey in keyof GenericObject]: GenericValue;
+};
