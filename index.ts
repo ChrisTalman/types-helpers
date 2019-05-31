@@ -12,3 +12,15 @@ export type PartialDeep <T> =
 		T[P] extends object ? PartialDeep<T[P]> :
 		T[P];
 };
+
+/** Converts every property value to the same type as their key. */
+export type Mirror <GenericObject> =
+{
+    [GenericKey in keyof GenericObject]: GenericKey
+};
+
+/** Converts every property value to the same type. */
+export type Uniform <GenericObject, GenericValue> =
+{
+    [GenericKey in keyof GenericObject]: GenericValue
+};
