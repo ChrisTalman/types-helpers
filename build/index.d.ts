@@ -14,3 +14,5 @@ export declare type Mirror<GenericObject> = {
 export declare type Uniform<GenericObject, GenericValue> = {
     [GenericKey in keyof GenericObject]: GenericValue;
 };
+/** Generates subset of given object, regardless of whether given keys are defined on the object or not. */
+export declare type OptionalPick<T, K extends PropertyKey> = Pick<T, Extract<keyof T, K>>;
