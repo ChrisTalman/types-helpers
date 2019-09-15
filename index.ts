@@ -16,13 +16,13 @@ export type PartialDeep <T> =
 /** Converts every property value to the same type as their key. */
 export type Mirror <GenericObject> =
 {
-    [GenericKey in keyof GenericObject]: GenericKey
+	[GenericKey in keyof GenericObject]: GenericKey
 };
 
 /** Converts every property value to the same type. */
 export type Uniform <GenericObject, GenericValue> =
 {
-    [GenericKey in keyof GenericObject]: GenericValue
+	[GenericKey in keyof GenericObject]: GenericValue
 };
 
 /** Generates subset of given object, regardless of whether given keys are defined on the object or not. */
