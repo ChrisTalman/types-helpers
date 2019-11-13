@@ -1,13 +1,7 @@
 {
-	"name": "@ChrisTalman/types-helpers",
-	"description": "Global TypeScript helpers.",
-	"version": "0.5.0",
-	"license": "UNLICENSED",
-	"repository": {
-		"type": "git",
-		"url": "https://bitbucket.org/Bluecewe/types-helpers"
-	},
-	"private": true,
+	"name": "@chris-talman/types-helpers",
+	"description": "TypeScript helper types",
+	"version": "1.0.0",
 	"devDependencies": {
 		"typescript": "3.2.2"
 	},

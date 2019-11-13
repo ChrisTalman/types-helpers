@@ -3,9 +3,9 @@ export declare type Omit<GenericObject extends object, GenericOmissions extends 
 /** Returns resolution type of a promise. */
 export declare type PromiseResolution<T> = T extends Promise<infer V> ? V : never;
 /** Makes all properties optional in interface and subinterfaces. */
-export declare type PartialDeep<T> = {
-    [P in keyof T]?: T[P] extends (infer U)[] ? PartialDeep<U>[] : T[P] extends object ? PartialDeep<T[P]> : T[P];
-};
+export declare type PartialDeep<T> = T extends object ? {
+    [K in keyof T]?: PartialDeep<T[K]>;
+} : T;
 /** Converts every property value to the same type as their key. */
 export declare type Mirror<GenericObject> = {
     [GenericKey in keyof GenericObject]: GenericKey;

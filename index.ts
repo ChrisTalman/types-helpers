@@ -5,13 +5,7 @@ export type Omit <GenericObject extends object, GenericOmissions extends string>
 export type PromiseResolution <T> = T extends Promise<infer V> ? V : never;
 
 /** Makes all properties optional in interface and subinterfaces. */
-export type PartialDeep <T> =
-{
-	[P in keyof T]?:
-		T[P] extends (infer U)[] ? PartialDeep<U>[] :
-		T[P] extends object ? PartialDeep<T[P]> :
-		T[P];
-};
+export type PartialDeep<T> = T extends object ? { [K in keyof T]?: PartialDeep<T[K]> } : T;
 
 /** Converts every property value to the same type as their key. */
 export type Mirror <GenericObject> =
