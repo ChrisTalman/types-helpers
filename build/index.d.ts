@@ -16,3 +16,5 @@ export declare type Uniform<GenericObject, GenericValue> = {
 export declare type OptionalPick<T, K extends PropertyKey> = Pick<T, Extract<keyof T, K>>;
 /** Requires given properties, leaving other properties unchanged as either required or optional. */
 export declare type RequireSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Required<Pick<GenericObject, GenericSome>>;
+/** Makes given properties optional, leaving other properties unchanged as either required or optional. */
+export declare type OptionalSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
