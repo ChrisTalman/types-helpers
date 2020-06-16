@@ -18,3 +18,7 @@ export declare type OptionalPick<T, K extends PropertyKey> = Pick<T, Extract<key
 export declare type RequireSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Required<Pick<GenericObject, GenericSome>>;
 /** Makes given properties optional, leaving other properties unchanged as either required or optional. */
 export declare type OptionalSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
+/** Keys in union. */
+export declare type UnionKeys<T> = T extends any ? keyof T : never;
+/** Pick union. */
+export declare type DistributivePick<T, K extends UnionKeys<T>> = T extends any ? Pick<T, Extract<keyof T, K>> : never;

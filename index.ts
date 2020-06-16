@@ -24,3 +24,9 @@ export type RequireSome <GenericObject extends object, GenericSome extends keyof
 
 /** Makes given properties optional, leaving other properties unchanged as either required or optional. */
 export type OptionalSome <GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
+
+/** Keys in union. */
+export type UnionKeys <T> = T extends any ? keyof T : never;
+
+/** Pick union. */
+export type DistributivePick <T, K extends UnionKeys <T>> = T extends any ? Pick <T, Extract <keyof T, K>> : never;
