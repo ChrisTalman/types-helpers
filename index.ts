@@ -28,5 +28,8 @@ export type OptionalSome <GenericObject extends object, GenericSome extends keyo
 /** Keys in union. */
 export type UnionKeys <T> = T extends any ? keyof T : never;
 
-/** Pick union. */
+/**
+	Pick union.
+	Courtesy Titian Cernicova-Dragomir: https://github.com/microsoft/TypeScript/issues/28339#issuecomment-463577347
+*/
 export type DistributivePick <T, K extends UnionKeys <T>> = T extends any ? Pick <T, Extract <keyof T, K>> : never;
