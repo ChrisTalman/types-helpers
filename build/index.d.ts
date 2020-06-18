@@ -25,3 +25,8 @@ export declare type UnionKeys<T> = T extends any ? keyof T : never;
     Courtesy Titian Cernicova-Dragomir: https://github.com/microsoft/TypeScript/issues/28339#issuecomment-463577347
 */
 export declare type DistributivePick<T, K extends UnionKeys<T>> = T extends any ? Pick<T, Extract<keyof T, K>> : never;
+/**
+    Omit union.
+    Courtesy Titian Cernicova-Dragomir: https://github.com/microsoft/TypeScript/issues/28339#issuecomment-463577347
+*/
+export declare type DistributiveOmit<T, K extends UnionKeys<T>> = T extends any ? Omit<T, Extract<keyof T, K>> : never;
