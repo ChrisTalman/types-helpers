@@ -39,3 +39,9 @@ export type DistributivePick <T, K extends UnionKeys <T>> = T extends any ? Pick
 	Courtesy Titian Cernicova-Dragomir: https://github.com/microsoft/TypeScript/issues/28339#issuecomment-463577347
 */
 export type DistributiveOmit <T, K extends UnionKeys <T>> = T extends any ? Omit <T, Extract <keyof T, K>> : never;
+
+/**
+	Return value of `Object.entries()`.
+	Courtesy Thomas Charlat: https://github.com/microsoft/TypeScript/issues/35101#issue-522767105
+*/
+export type Entries <T> = { [K in keyof T]: [K, T[K]] }[keyof T][];

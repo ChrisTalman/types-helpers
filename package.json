@@ -1,7 +1,7 @@
 {
 	"name": "@chris-talman/types-helpers",
 	"description": "TypeScript helper types",
-	"version": "2.3.0",
+	"version": "2.4.0",
 	"devDependencies": {
 		"typescript": "3.7.5"
 	},
