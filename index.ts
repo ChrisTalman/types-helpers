@@ -2,7 +2,7 @@
 export type PromiseResolution <T> = T extends Promise<infer V> ? V : never;
 
 /** Makes all properties optional in interface and subinterfaces. */
-export type PartialDeep<T> = T extends object ? { [K in keyof T]?: PartialDeep<T[K]> } : T;
+export type PartialDeep <T> = T extends object ? { [K in keyof T]?: PartialDeep<T[K]> } : T;
 
 /** Converts every property value to the same type as their key. */
 export type Mirror <GenericObject> =
@@ -17,7 +17,7 @@ export type Uniform <GenericObject, GenericValue> =
 };
 
 /** Generates subset of given object, regardless of whether given keys are defined on the object or not. */
-export type OptionalPick<T, K extends PropertyKey> = Pick<T, Extract<keyof T, K>>;
+export type OptionalPick <T, K extends PropertyKey> = Pick<T, Extract<keyof T, K>>;
 
 /** Requires given properties, leaving other properties unchanged as either required or optional. */
 export type RequireSome <GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Required<Pick<GenericObject, GenericSome>>;
@@ -27,6 +27,9 @@ export type OptionalSome <GenericObject extends object, GenericSome extends keyo
 
 /** Keys in union. */
 export type UnionKeys <T> = T extends any ? keyof T : never;
+
+/** Omits literal from union. */
+export type OmitLiteral <GenericBase extends string | number | symbol, GenericOmit extends string | number | symbol> = keyof Omit<{[Type in GenericBase]: true}, GenericOmit>;
 
 /**
 	Pick union.
