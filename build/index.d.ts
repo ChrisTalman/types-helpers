@@ -20,6 +20,10 @@ export declare type RequireSome<GenericObject extends object, GenericSome extend
 export declare type OptionalSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
 /** Keys in union. */
 export declare type UnionKeys<T> = T extends any ? keyof T : never;
+/** Picks literal from union. */
+export declare type PickLiteral<GenericBase extends string | number | symbol, GenericPick extends GenericBase> = keyof Pick<{
+    [Type in GenericBase]: true;
+}, GenericPick>;
 /** Omits literal from union. */
 export declare type OmitLiteral<GenericBase extends string | number | symbol, GenericOmit extends string | number | symbol> = keyof Omit<{
     [Type in GenericBase]: true;
