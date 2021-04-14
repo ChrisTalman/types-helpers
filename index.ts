@@ -28,6 +28,9 @@ export type OptionalSome <GenericObject extends object, GenericSome extends keyo
 /** Keys in union. */
 export type UnionKeys <T> = T extends any ? keyof T : never;
 
+/** Picks literal from union. */
+export type PickLiteral <GenericBase extends string | number | symbol, GenericPick extends GenericBase> = keyof Pick<{[Type in GenericBase]: true}, GenericPick>;
+
 /** Omits literal from union. */
 export type OmitLiteral <GenericBase extends string | number | symbol, GenericOmit extends string | number | symbol> = keyof Omit<{[Type in GenericBase]: true}, GenericOmit>;
 
