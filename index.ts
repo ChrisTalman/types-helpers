@@ -25,7 +25,10 @@ export type RequireSome <GenericObject extends object, GenericSome extends keyof
 /** Makes given properties optional, leaving other properties unchanged as either required or optional. */
 export type OptionalSome <GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
 
-/** Requires optional properties to be their defined type or `undefined`. */
+/**
+	Requires optional properties to be their defined type or `undefined`.
+	Courtesy Kevin Ring: https://medium.com/terria/typescript-transforming-optional-properties-to-required-properties-that-may-be-undefined-7482cb4e1585
+*/
 export type RequireOptionalAsUndefined <GenericObject extends object> =
 {
 	[Key in keyof Required <GenericObject>]:
