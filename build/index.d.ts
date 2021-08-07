@@ -15,7 +15,7 @@ export declare type Uniform<GenericObject, GenericValue> = {
 /** Generates subset of given object, regardless of whether given keys are defined on the object or not. */
 export declare type OptionalPick<T, K extends PropertyKey> = Pick<T, Extract<keyof T, K>>;
 /** Requires given properties, leaving other properties unchanged as either required or optional. */
-export declare type RequireSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Required<Pick<GenericObject, GenericSome>>;
+export declare type RequireSome<GenericObject extends any, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Required<Pick<GenericObject, GenericSome>>;
 /** Makes given properties optional, leaving other properties unchanged as either required or optional. */
 export declare type OptionalSome<GenericObject extends object, GenericSome extends keyof GenericObject> = Omit<GenericObject, GenericSome> & Partial<Pick<GenericObject, GenericSome>>;
 /**
@@ -45,6 +45,10 @@ export declare type DistributivePick<T, K extends UnionKeys<T>> = T extends any 
     Courtesy Titian Cernicova-Dragomir: https://github.com/microsoft/TypeScript/issues/28339#issuecomment-463577347
 */
 export declare type DistributiveOmit<T, K extends UnionKeys<T>> = T extends any ? Omit<T, Extract<keyof T, K>> : never;
+/**
+    `RequireSome` on union.
+*/
+export declare type DistributiveRequireSome<T, K extends UnionKeys<T>> = T extends any ? RequireSome<T, K> : Extract<keyof T, K>;
 /**
     Return value of `Object.entries()`.
     Courtesy Thomas Charlat: https://github.com/microsoft/TypeScript/issues/35101#issue-522767105
