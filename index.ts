@@ -70,3 +70,6 @@ export declare type DistributiveRequireSome <T, K extends UnionKeys <T>> = T ext
 	Courtesy Thomas Charlat: https://github.com/microsoft/TypeScript/issues/35101#issue-522767105
 */
 export type Entries <T> = { [K in keyof T]: [K, T[K]] }[keyof T][];
+
+/** Apply `Uniform` deep into an object. */
+export type UniformDeep <GenericObject, GenericUniform> = GenericObject extends object ? { [Key in keyof GenericObject]?: UniformDeep <GenericObject[Key], GenericUniform>; } : GenericUniform;
